@@ -67,10 +67,9 @@ namespace Vending_machine
 
         public void ListItems()
         {
-        Console.WriteLine("These are the items currently in the inventory");
             foreach (var item in _items)
             {
-                Console.WriteLine($"{item.Name} Quantity: {item.Quantity} Price: {item.Price:C}");
+                Console.WriteLine($"{item.Name} - Quantity: {item.Quantity} Price: {item.Price:C}");
             }
         }
     }

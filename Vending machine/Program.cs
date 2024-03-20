@@ -31,17 +31,16 @@ namespace Vending_machine
             VendingMachine vendingMachine = new VendingMachine(inventory, bank);
 
             // Display initial user balance
-            Console.WriteLine($"Welcome, {user.Name}! Your balance is: {user.Money:C}");
+            Console.WriteLine($"Welcome, {user.Name}! Your balance is: {user.Money:C}\n");
 
             // Display available items
-            Console.WriteLine("Available Items:");
             inventory.ListItems();
 
             // Main vending machine loop
             while (true)
             {
                 // Prompt user to select an item
-                Console.Write("Enter the name of the item you want to purchase, write help for a list of commands (or 'exit' to quit): ");
+                Console.Write("\nEnter the name of the item you want to purchase, write help for a list of commands (or 'exit' to quit): ");
                 string input = Console.ReadLine().Trim();
 
                 if (input.ToLower() == "exit")
@@ -57,6 +56,7 @@ namespace Vending_machine
                     Console.WriteLine("'help' - Display available commands");
                     Console.WriteLine("'list' - Display available items");
                     Console.WriteLine("'balance' - Display your current balance");
+                    Console.WriteLine("'history' - ");
                     continue; // Continue to prompt for user input
                 }
                 else if (input.ToLower() == "list")
