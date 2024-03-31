@@ -22,4 +22,4 @@ The vending machine application simulates the functionality of a real-world vend
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/vending-machine.git
+git clone https://github.com/lucasackerberg/vending-machine.git
