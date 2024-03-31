@@ -8,7 +8,23 @@ namespace Vending_machine
         static void Main(string[] args)
         {
             // Create a user and a bank
-            User user = new User("Kebabmannen", 100.00m);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(@"
+
+                                                *                                                           
+                     (                        (  `                  )                   (  (       )     )  
+ (   (    (          )\ )  (          (  (    )\))(      )       ( /( (            (    )\))(   ( /(  ( /(  
+ )\  )\  ))\  (     (()/(  )\   (     )\))(  ((_)()\  ( /(   (   )\()))\   (      ))\  ((_)()\  )\()) )\()) 
+((_)((_)/((_) )\ )   ((_))((_)  )\ ) ((_))\  (_()((_) )(_))  )\ ((_)\((_)  )\ )  /((_)  (()((_)((_)\ ((_)\  
+\ \ / /(_))  _(_/(   _| |  (_) _(_/(  (()(_) |  \/  |((_)_  ((_)| |(_)(_) _(_/( (_))     | __| /  (_)/  (_) 
+ \ V / / -_)| ' \))/ _` |  | || ' \))/ _` |  | |\/| |/ _` |/ _| | ' \ | || ' \))/ -_)    |__ \| () || () |  
+  \_/  \___||_||_| \__,_|  |_||_||_| \__, |  |_|  |_|\__,_|\__| |_||_||_||_||_| \___|    |___/ \__/  \__/   
+                                     |___/                                                                  
+");
+            Console.WriteLine("Hello and welcome to the vending machine, please write out your name:");
+            Console.ResetColor();
+            var name = Console.ReadLine();
+            User user = new User(name, 100.00m);
             Bank bank = new Bank(1000.00m);
 
             // Initialize vending machine items
@@ -56,7 +72,7 @@ namespace Vending_machine
                     Console.WriteLine("'help' - Display available commands");
                     Console.WriteLine("'list' - Display available items");
                     Console.WriteLine("'balance' - Display your current balance");
-                    Console.WriteLine("'history' - ");
+                    Console.WriteLine("'history' - Display purchase history");
                     continue; // Continue to prompt for user input
                 }
                 else if (input.ToLower() == "list")

@@ -9,7 +9,7 @@ namespace Vending_machine
 {
     public class User
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public decimal Money { get; set; }
 
         public User(string name, decimal money)

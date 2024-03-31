@@ -69,8 +69,13 @@ namespace Vending_machine
         {
             foreach (var item in _items)
             {
-                Console.WriteLine($"{item.Name} - Quantity: {item.Quantity} Price: {item.Price:C}");
+                Console.Write($"{item.Name} - Quantity: {item.Quantity} Price: ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($"{item.Price:C}");
+                Console.ResetColor(); // Reset color to default
+                Console.WriteLine();
             }
         }
+
     }
 }

@@ -10,13 +10,13 @@ public class VendingMachine
     {
         private Inventory _inventory;
         private Bank _bank;
-        private List<string> _history;
+        private List<(string itemName, decimal itemPrice)> _history;
 
         public VendingMachine(Inventory inventory, Bank bank)
         {
             _inventory = inventory;
             _bank = bank;
-            _history = new List<string>();
+            _history = new List<(string, decimal)>();
         }
 
         public bool PurchaseItem(User user, string itemName)
@@ -43,20 +43,24 @@ public class VendingMachine
             _inventory.RemoveItem(itemName, 1);
 
             // Lägg till itemet till historiken.
-            _history.Add(itemName);
+            _history.Add((itemName, itemPrice));
 
             Console.WriteLine($"Purchase successful! '{itemName}' has been dispensed.");
             return true;
         }
 
-        public void purchaseHistory(User user) 
+        public void purchaseHistory(User user)
         {
-            if (_history != null)
+            if (_history.Count > 0)
             {
                 Console.WriteLine($"Purchase history for {user.Name}:");
                 foreach (var purchase in _history)
                 {
-                    Console.WriteLine(purchase);
+                    Console.WriteLine($"{purchase.itemName}:");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"{purchase.itemPrice:C}");
+                    Console.ResetColor();
+                    Console.WriteLine("--------------------");
                 }
             }
             else
