@@ -23,3 +23,6 @@ The vending machine application simulates the functionality of a real-world vend
 
 ```bash
 git clone https://github.com/lucasackerberg/vending-machine.git
+```
+
+2. Have fun!
